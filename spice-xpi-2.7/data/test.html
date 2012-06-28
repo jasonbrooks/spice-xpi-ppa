@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>SPICE xpi test page</TITLE>
+</HEAD>
+<BODY onload='BodyLoad()' onunload='BodyUnload()'>
+
+<center>
+<h1>SPICE xpi test page</h1>
+</center>
+
+SPICE xpi test page.
+<br><br>
+
+<center>
+
+<embed type="application/x-spice" width=0 height=0><br>
+
+<script>
+
+var embed = document.embeds[0];
+
+function BodyLoad() {
+    document.getElementById("log").innerHTML += "BodyLoad<br>";
+}
+
+function BodyUnload() {
+    document.getElementById("log").innerHTML += "BodyUnload<br>";
+}
+
+function Execute()
+{
+    document.getElementById("log").innerHTML += "Execute<br>";
+    embed.hostIP = document.all["Host"].value;
+    embed.port = document.all["Port"].value;
+    embed.SecurePort = document.all["SecurePort"].value;
+    embed.Password = document.all["Password"].value;
+    embed.HostSubject = document.all["HostSubject"].value;
+    embed.TrustStore = document.all["TrustStore"].value;
+    embed.fullScreen = false;
+    embed.AdminConsole = (document.all["AdminConsole"].value == "1");
+    embed.HotKeys = document.all["HotKeys"].value;
+    embed.fAudio = true;
+    embed.connect();
+}
+
+function Status()
+{
+    var status = embed.ConnectedStatus();
+    document.getElementById("log").innerHTML += "ConnectedStatus = " + status + "<br>";
+}
+
+function Show()
+{
+    embed.show();
+    document.getElementById("log").innerHTML += "Show was called<br>";
+}
+
+</script>
+
+
+<br>
+Host: <input id="Host" type="text" size="13"> </input>
+Port: <input id="Port" type="text" size="13"> </input> <BR>
+SecurePort: <input id="SecurePort" type="text" size="13"> </input> <BR>
+Password: <input id="Password" type="text" size="13"> </input>
+HotKeys: <input id="HotKeys" type="text" size="13" value="release-cursor=ctrl+alt"> </input>
+AdminConsole: <input id="AdminConsole" type="text" size="5" value="1"> </input>
+<BR>
+HostSubject: <input id="HostSubject" type="text" size="60"> </input></br>
+TrustStore: <textarea id="TrustStore" type="text" cols="65" rows="15"> </textarea> <BR>
+
+<input type=button value="Exec" onclick='Execute()'/>
+<input type=button value="Check Status" onclick='Status()'> </input>
+<input type=button value="Show" onclick='Show()'> </input>
+
+</center>
+
+
+---<br>
+<div id="log">
+</div>
+---<br>
+</BODY>
+</HTML>

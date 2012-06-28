@@ -1,0 +1,14 @@
+## Description: add some description
+## Origin/Author: add some origin or author
+## Bug: bug URL
+--- configure.ac	2012-02-21 18:34:42.596520470 -0800
++++ spice-xpi-2.7/configure.ac	2012-02-21 21:53:42.316512264 -0800
+@@ -42,7 +42,7 @@
+ 
+ # The explicit nspr dep is needed because libxul-embedding
+ # in RHEL5 is missing the Requires
+-PKG_CHECK_MODULES(XUL, libxul-embedding >= 1.9 nspr >= 4.7.1)
++PKG_CHECK_MODULES(XUL, libxul, mozilla-nspr)
+ AC_SUBST(XUL_CFLAGS)
+ AC_SUBST(XUL_LIBS)
+ 

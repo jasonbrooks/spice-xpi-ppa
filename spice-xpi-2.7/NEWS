@@ -1,0 +1,5 @@
+spice-xpi 2.7
+=============
+
+- build fixes for newer and older xul
+- fix out of tree build

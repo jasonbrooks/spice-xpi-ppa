@@ -1,0 +1,43 @@
+## Description: add some description
+## Origin/Author: add some origin or author
+## Bug: bug URL
+From 7cd07c2e6426087d4c4d36c74083335098c5d0c1 Mon Sep 17 00:00:00 2001
+From: Peter Hatina <phatina@redhat.com>
+Date: Mon, 6 Feb 2012 17:32:57 +0100
+Subject: [PATCH] build: added cachedir option to typelib.py
+
+---
+ SpiceXPI/src/plugin/Makefile.am |   11 +++++++++--
+ 1 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/SpiceXPI/src/plugin/Makefile.am b/SpiceXPI/src/plugin/Makefile.am
+index b2c83ab..a17ac4d 100644
+--- a/SpiceXPI/src/plugin/Makefile.am
++++ b/SpiceXPI/src/plugin/Makefile.am
+@@ -70,10 +70,10 @@ nsISpicec.xpt: nsISpicec.idl
+ 	$(XPIDL) -m typelib -I $(SDK_INCLUDE_DIR) $<
+ else
+ nsISpicec.h: nsISpicec.idl
+-	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/header.py -I $(SDK_INCLUDE_DIR) $< -o $@
++	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/header.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
+ 
+ nsISpicec.xpt: nsISpicec.idl
+-	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py -I $(SDK_INCLUDE_DIR) $< -o $@
++	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
+ endif
+ 
+ BUILT_SOURCES =					\
+@@ -83,3 +83,10 @@ BUILT_SOURCES =					\
+ 
+ distclean-local:
+ 	rm -f $(BUILT_SOURCES)
++
++CLEANFILES = \
++	xpidllex.py   \
++	xpidllex.pyc  \
++	xpidlyacc.py  \
++	xpidlyacc.pyc \
++	xpidl_debug
+-- 
+1.7.7.6
+
