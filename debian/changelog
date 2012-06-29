@@ -1,3 +1,9 @@
+spice-xpi (2.7-5)ppa; urgency=low
+
+* tweaks to enable launchpad ppa autobuilding
+
+ -- Jason Brooks <jason@sealrock.net> Fri, 29 Jun 2012 11:23:00 -0800
+
 spice-xpi (2.7-1ubuntu4) oneiric; urgency=low
 
 rebuild to pick up new firefox version  * 
