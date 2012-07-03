@@ -2,7 +2,7 @@ Source: spice-xpi
 Section: libs
 Priority: extra
 Maintainer: Jason Brooks <jason@sealrock.net>
-Build-Depends: debhelper (>= 6.0.0), cdbs, zip, automake, mozilla-devscripts, libx11-dev, liblog4cpp5-dev, libnspr4-dev, firefox-dev (>= 8.0.0) | xulrunner-1.9.2-dev, pkg-config
+Build-Depends: debhelper (>= 6.0.0), cdbs, dh-autoreconf, zip, automake, mozilla-devscripts, libx11-dev, liblog4cpp5-dev, libnspr4-dev, firefox-dev (>= 8.0.0) | xulrunner-1.9.2-dev, pkg-config
 Standards-Version: 3.9.2
 Homepage: http://spice-space.org/
 #Vcs-Git: git://git.debian.org/collab-maint/spice-xpi.git
