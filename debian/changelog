@@ -1,4 +1,10 @@
-pice-xpi (2.7-1ubuntu5) oneiric; urgency=low
+spice-xpi (2.7-1ubuntu6) oneiric; urgency=low
+
+  * change the build req to allow lucid pkg to build
+
+ -- Jason Brooks <jason@sealrock.net>  Tue, 03 Jul 2012 08:29:18 -0700
+
+spice-xpi (2.7-1ubuntu5) oneiric; urgency=low
 
   * tweaks to enable autobuilding in the ppa
 
