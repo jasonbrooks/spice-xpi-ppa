@@ -1,5 +1,11 @@
 spice-xpi (2.7-1ubuntu7) oneiric; urgency=low
 
+  * try removing dh-autoreconf build-require to make lucid build work
+
+ -- Jason Brooks <jason@sealrock.net>  Tue, 03 Jul 2012 13:00:03 -0700
+
+spice-xpi (2.7-1ubuntu7) oneiric; urgency=low
+
   * more changes to allow for lucid and precise
 
  -- Jason Brooks <jason@sealrock.net>  Tue, 03 Jul 2012 12:19:56 -0700
