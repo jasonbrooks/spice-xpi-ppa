@@ -8,7 +8,7 @@
  # The explicit nspr dep is needed because libxul-embedding
  # in RHEL5 is missing the Requires
 -PKG_CHECK_MODULES(XUL, libxul-embedding >= 1.9 nspr >= 4.7.1)
-+PKG_CHECK_MODULES(XUL, libxul, mozilla-nspr)
++PKG_CHECK_MODULES(XUL, mozilla-plugin, mozilla-nspr)
  AC_SUBST(XUL_CFLAGS)
  AC_SUBST(XUL_LIBS)
  
