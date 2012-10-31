@@ -19,11 +19,11 @@ index b2c83ab..a17ac4d 100644
  else
  nsISpicec.h: nsISpicec.idl
 -	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/header.py -I $(SDK_INCLUDE_DIR) $< -o $@
-+	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/header.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
++	$(PYTHON) `pkg-config --variable=sdkdir mozilla-plugin`/sdk/bin/header.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
  
  nsISpicec.xpt: nsISpicec.idl
 -	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py -I $(SDK_INCLUDE_DIR) $< -o $@
-+	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
++	$(PYTHON) `pkg-config --variable=sdkdir mozilla-plugin`/sdk/bin/typelib.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
  endif
  
  BUILT_SOURCES =					\
