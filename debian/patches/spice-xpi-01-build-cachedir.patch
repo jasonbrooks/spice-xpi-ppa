@@ -1,0 +1,37 @@
+--- a/SpiceXPI/src/plugin/Makefile.am
++++ b/SpiceXPI/src/plugin/Makefile.am
+@@ -2,7 +2,7 @@
+ EXTENSION_ID    = SpiceXPI@redhat.com
+ FIREFOX_APPID   = {ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+ extensiondir    = $(libdir)/mozilla
+-SDK_INCLUDE_DIR = `pkg-config --variable=idldir libxul`
++SDK_INCLUDE_DIR = `pkg-config --variable=idldir mozilla-plugin`
+ 
+ INCLUDES =                           \
+        $(XUL_CFLAGS)                    \
+@@ -70,10 +70,10 @@
+        $(XPIDL) -m typelib -I $(SDK_INCLUDE_DIR) $<
+ else
+ nsISpicec.h: nsISpicec.idl
+-       $(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/header.py -I $(SDK_INCLUDE_DIR) $< -o $@
++       $(PYTHON) `pkg-config --variable=sdkdir mozilla-plugin`/sdk/bin/header.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
+ 
+ nsISpicec.xpt: nsISpicec.idl
+-       $(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py -I $(SDK_INCLUDE_DIR) $< -o $@
++       $(PYTHON) `pkg-config --variable=sdkdir mozilla-plugin`/sdk/bin/typelib.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
+ endif
+ 
+ BUILT_SOURCES =                                        \
+@@ -83,3 +83,10 @@
+ 
+ distclean-local:
+        rm -f $(BUILT_SOURCES)
++
++CLEANFILES = \
++       xpidllex.py   \
++       xpidllex.pyc  \
++       xpidlyacc.py  \
++       xpidlyacc.pyc \
++       xpidl_debug
+--
+1.7.7.6
