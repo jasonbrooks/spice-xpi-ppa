@@ -40,9 +40,9 @@ PKG_CHECK_MODULES(LOG4CPP, log4cpp)
 AC_SUBST(LOG4CPP_CFLAGS)
 AC_SUBST(LOG4CPP_LIBS)
 
-# The explicit nspr dep is needed because mozilla-plugin-embedding
+# The explicit nspr dep is needed because libxul-embedding
 # in RHEL5 is missing the Requires
-PKG_CHECK_MODULES(XUL, mozilla-plugin, mozilla-nspr)
+PKG_CHECK_MODULES(XUL, mozilla-plugin)
 AC_SUBST(XUL_CFLAGS)
 AC_SUBST(XUL_LIBS)
 
@@ -75,7 +75,7 @@ AC_LANG_POP([C])
 CFLAGS=$oCFLAGS
 
 # Find xpidl
-XPIDL=`pkg-config --variable=libdir mozilla-plugin`/xpidl
+XPIDL=/usr/lib/firefox-devel/sdk/bin/xpidl
 AM_CONDITIONAL([HAVE_XPIDL], [test -x "$XPIDL"])
 AC_SUBST(XPIDL)
 
@@ -86,11 +86,11 @@ if ! test -x "$XPIDL"; then
 fi
 
 XUL_INCLUDEDIR=`pkg-config --variable=includedir mozilla-plugin`
-XUL_IDLDIR=`pkg-config --variable=idldir mozilla-plugin`
+XUL_IDLDIR=/usr/share/idl/firefox
 AC_SUBST(XUL_INCLUDEDIR)
 AC_SUBST(XUL_IDLDIR)
 
-dnl mozilla-plugin 1.9.1 changed header file names
+dnl libxul 1.9.1 changed header file names
 PKG_CHECK_MODULES(XUL191,
         mozilla-plugin >= 1.9.1,
         have_xul191=yes,

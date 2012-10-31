@@ -1,50 +1,5 @@
-spice-xpi (2.7-1ubuntu7) oneiric; urgency=low
-
-  * try removing dh-autoreconf build-require to make lucid build work
-
- -- Jason Brooks <jason@sealrock.net>  Tue, 03 Jul 2012 13:00:03 -0700
-
-spice-xpi (2.7-1ubuntu7) oneiric; urgency=low
-
-  * more changes to allow for lucid and precise
-
- -- Jason Brooks <jason@sealrock.net>  Tue, 03 Jul 2012 12:19:56 -0700
-
-spice-xpi (2.7-1ubuntu6) oneiric; urgency=low
-
-  * change the build req to allow lucid pkg to build
-
- -- Jason Brooks <jason@sealrock.net>  Tue, 03 Jul 2012 08:29:18 -0700
-
-spice-xpi (2.7-1ubuntu5) oneiric; urgency=low
-
-  * tweaks to enable autobuilding in the ppa
-
- -- Jason Brooks <jason@sealrock.net>  Mon, 02 Jul 2012 15:51:31 -0700
-
-spice-xpi (2.7-1ubuntu4) oneiric; urgency=low
-
-  * rebuild to pick up new firefox version  
-
- -- Jason Brooks <jason@sealrock.net>  Fri, 06 Apr 2012 19:33:44 -0700
-
-spice-xpi (2.7-1ubuntu3) oneiric; urgency=low
-
-  * debian/patches/spice-xpi-02-configure.patch: patch to the makefile to
-    shift dep to firefox-dev
-
- -- Jason Brooks <jason@sealrock.net>  Wed, 22 Feb 2012 08:11:22 -0800
-
-spice-xpi (2.7-1ubuntu2) oneiric; urgency=low
-
-  * debian/patches/spice-xpi-01-build-cachedir.patch: this patch comes from
-    upstream
-
- -- Jason Brooks <jason@sealrock.net>  Wed, 22 Feb 2012 08:10:39 -0800
-
-spice-xpi (2.7-1ubuntu1) oneiric; urgency=low
+spice-xpi (2.7-1) precise; urgency=low
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
- -- Jason Brooks <jason@sealrock.net>  Wed, 22 Feb 2012 07:48:53 -0800
-
+ -- jason <jason@sealrock.net>  Wed, 31 Oct 2012 10:34:08 -0700

@@ -1,15 +1,15 @@
 Source: spice-xpi
 Section: libs
 Priority: extra
-Maintainer: Jason Brooks <jason@sealrock.net>
-Build-Depends: debhelper (>= 6.0.0), cdbs, dh-autoreconf, zip, automake, mozilla-devscripts, libx11-dev, liblog4cpp5-dev, libnspr4-dev, firefox-dev (>= 8.0.0) | xulrunner-1.9.2-dev, pkg-config
+Maintainer: jason <jason@unknown>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, firefox-dev
 Standards-Version: 3.9.2
-Homepage: http://spice-space.org/
+Homepage: http://spice-space.org
 #Vcs-Git: git://git.debian.org/collab-maint/spice-xpi.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/spice-xpi.git;a=summary
 
 Package: spice-xpi
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Spice extension for Mozilla allows the client to be used from a web browser.
-    Spice extension for Mozilla allows the client to be used from a web browser.
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

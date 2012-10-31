@@ -30,7 +30,7 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
-/* Define if we have mozilla-plugin >= 1.9.1 */
+/* Define if we have libxul >= 1.9.1 */
 #undef HAVE_XUL191
 
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
