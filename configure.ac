@@ -42,7 +42,7 @@ AC_SUBST(LOG4CPP_LIBS)
 
 # The explicit nspr dep is needed because libxul-embedding
 # in RHEL5 is missing the Requires
-PKG_CHECK_MODULES(XUL, mozilla-plugin, mozilla-nspr)
+PKG_CHECK_MODULES(XUL, libxul-embedding >= 1.9 nspr >= 4.7.1)
 AC_SUBST(XUL_CFLAGS)
 AC_SUBST(XUL_LIBS)
 
@@ -81,12 +81,12 @@ AC_SUBST(XPIDL)
 
 if ! test -x "$XPIDL"; then
   AM_PATH_PYTHON
-  AC_CHECK_FILE([`pkg-config --variable=sdkdir firefox-devel`/sdk/bin/header.py])
-  AC_CHECK_FILE([`pkg-config --variable=sdkdir firefox-devel`/sdk/bin/typelib.py])
+  AC_CHECK_FILE([`pkg-config --variable=sdkdir libxul`/sdk/bin/header.py])
+  AC_CHECK_FILE([`pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py])
 fi
 
-XUL_INCLUDEDIR=`pkg-config --variable=includedir firefox-devel`
-XUL_IDLDIR=`pkg-config --variable=idldir firefox-devel
+XUL_INCLUDEDIR=`pkg-config --variable=includedir libxul`
+XUL_IDLDIR=`pkg-config --variable=idldir libxul`
 AC_SUBST(XUL_INCLUDEDIR)
 AC_SUBST(XUL_IDLDIR)
 
