@@ -70,10 +70,10 @@ nsISpicec.xpt: nsISpicec.idl
 	$(XPIDL) -m typelib -I $(SDK_INCLUDE_DIR) $<
 else
 nsISpicec.h: nsISpicec.idl
-	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/header.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
+	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/header.py -I $(SDK_INCLUDE_DIR) $< -o $@
 
 nsISpicec.xpt: nsISpicec.idl
-	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py --cachedir . -I $(SDK_INCLUDE_DIR) $< -o $@
+	$(PYTHON) `pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py -I $(SDK_INCLUDE_DIR) $< -o $@
 endif
 
 BUILT_SOURCES =					\
