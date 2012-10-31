@@ -1,14 +1,56 @@
 ## Description: add some description
 ## Origin/Author: add some origin or author
 ## Bug: bug URL
---- configure.ac	2012-02-21 18:34:42.596520470 -0800
-+++ spice-xpi-2.7/configure.ac	2012-02-21 21:53:42.316512264 -0800
-@@ -42,7 +42,7 @@
+--- configure.ac        2012-10-30 16:44:31.889446000 -0700
++++ configure.new       2012-10-30 16:57:36.101785603 -0700
+@@ -40,9 +40,9 @@
+ AC_SUBST(LOG4CPP_CFLAGS)
+ AC_SUBST(LOG4CPP_LIBS)
  
- # The explicit nspr dep is needed because libxul-embedding
+-# The explicit nspr dep is needed because libxul-embedding
++# The explicit nspr dep is needed because mozilla-plugin-embedding
  # in RHEL5 is missing the Requires
 -PKG_CHECK_MODULES(XUL, libxul-embedding >= 1.9 nspr >= 4.7.1)
 +PKG_CHECK_MODULES(XUL, mozilla-plugin, mozilla-nspr)
  AC_SUBST(XUL_CFLAGS)
  AC_SUBST(XUL_LIBS)
+ 
+@@ -75,29 +75,29 @@
+ CFLAGS=$oCFLAGS
+ 
+ # Find xpidl
+-XPIDL=`pkg-config --variable=libdir libxul`/xpidl
++XPIDL=`pkg-config --variable=libdir mozilla-plugin`/xpidl
+ AM_CONDITIONAL([HAVE_XPIDL], [test -x "$XPIDL"])
+ AC_SUBST(XPIDL)
+ 
+ if ! test -x "$XPIDL"; then
+   AM_PATH_PYTHON
+-  AC_CHECK_FILE([`pkg-config --variable=sdkdir libxul`/sdk/bin/header.py])
+-  AC_CHECK_FILE([`pkg-config --variable=sdkdir libxul`/sdk/bin/typelib.py])
++  AC_CHECK_FILE([`pkg-config --variable=sdkdir mozilla-plugin`/sdk/bin/header.py])
++  AC_CHECK_FILE([`pkg-config --variable=sdkdir mozilla-plugin`/sdk/bin/typelib.py])
+ fi
+ 
+-XUL_INCLUDEDIR=`pkg-config --variable=includedir libxul`
+-XUL_IDLDIR=`pkg-config --variable=idldir libxul`
++XUL_INCLUDEDIR=`pkg-config --variable=includedir mozilla-plugin`
++XUL_IDLDIR=`pkg-config --variable=idldir mozilla-plugin`
+ AC_SUBST(XUL_INCLUDEDIR)
+ AC_SUBST(XUL_IDLDIR)
+ 
+-dnl libxul 1.9.1 changed header file names
++dnl mozilla-plugin 1.9.1 changed header file names
+ PKG_CHECK_MODULES(XUL191,
+-        libxul >= 1.9.1,
++        mozilla-plugin >= 1.9.1,
+         have_xul191=yes,
+         have_xul191=no)
+ 
+ if test "x$have_xul191" = "xyes" ; then
+-  AC_DEFINE([HAVE_XUL191], [1], [Define if we have libxul >= 1.9.1])
++  AC_DEFINE([HAVE_XUL191], [1], [Define if we have mozilla-plugin >= 1.9.1])
+ fi
+ 
+ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
  
