@@ -1,3 +1,5 @@
+--- a/SpiceXPI/src/plugin/Makefile.am
++++ b/SpiceXPI/src/plugin/Makefile.am
 @@ -2,7 +2,7 @@
  EXTENSION_ID    = SpiceXPI@redhat.com
  FIREFOX_APPID   = {ec8030f7-c20a-464f-9b0e-13a3a9e97384}
