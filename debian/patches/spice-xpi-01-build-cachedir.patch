@@ -1,19 +1,22 @@
-## Description: add some description
-## Origin/Author: add some origin or author
-## Bug: bug URL
-From 7cd07c2e6426087d4c4d36c74083335098c5d0c1 Mon Sep 17 00:00:00 2001
-From: Peter Hatina <phatina@redhat.com>
-Date: Mon, 6 Feb 2012 17:32:57 +0100
-Subject: [PATCH] build: added cachedir option to typelib.py
+commit 3ad3aa086bc5549daaf427d85e3fd4961a8fa952
+Author: Jason Brooks <jason@sealrock.net>
+Date:   Tue Oct 30 18:55:08 2012 -0700
 
----
- SpiceXPI/src/plugin/Makefile.am |   11 +++++++++--
- 1 files changed, 9 insertions(+), 2 deletions(-)
+    ch-ch-ch-changes -- another mozilla-plugin swap
 
 diff --git a/SpiceXPI/src/plugin/Makefile.am b/SpiceXPI/src/plugin/Makefile.am
-index b2c83ab..a17ac4d 100644
+index b2c83ab..aee83ac 100644
 --- a/SpiceXPI/src/plugin/Makefile.am
 +++ b/SpiceXPI/src/plugin/Makefile.am
+@@ -2,7 +2,7 @@ NULL            =
+ EXTENSION_ID    = SpiceXPI@redhat.com
+ FIREFOX_APPID   = {ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+ extensiondir    = $(libdir)/mozilla
+-SDK_INCLUDE_DIR = `pkg-config --variable=idldir libxul`
++SDK_INCLUDE_DIR = `pkg-config --variable=idldir mozilla-plugin`
+ 
+ INCLUDES =                           \
+ 	$(XUL_CFLAGS)                    \
 @@ -70,10 +70,10 @@ nsISpicec.xpt: nsISpicec.idl
  	$(XPIDL) -m typelib -I $(SDK_INCLUDE_DIR) $<
  else
@@ -38,6 +41,3 @@ index b2c83ab..a17ac4d 100644
 +	xpidlyacc.py  \
 +	xpidlyacc.pyc \
 +	xpidl_debug
--- 
-1.7.7.6
-
