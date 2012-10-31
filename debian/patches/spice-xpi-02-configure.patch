@@ -1,6 +1,14 @@
---- configure.ac	2012-10-30 16:44:31.889446000 -0700
-+++ spice-xpi-2.7/configure.ac	2012-10-30 16:57:36.101785603 -0700
-@@ -40,9 +40,9 @@
+commit 9c02d7d105722273e0c63063789c0c3e28e8d4c5
+Author: Jason Brooks <jason@sealrock.net>
+Date:   Tue Oct 30 18:26:17 2012 -0700
+
+    patch-makin
+
+diff --git a/configure.ac b/configure.ac
+index 42e130b..25249d8 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -40,9 +40,9 @@ PKG_CHECK_MODULES(LOG4CPP, log4cpp)
  AC_SUBST(LOG4CPP_CFLAGS)
  AC_SUBST(LOG4CPP_LIBS)
  
@@ -12,7 +20,7 @@
  AC_SUBST(XUL_CFLAGS)
  AC_SUBST(XUL_LIBS)
  
-@@ -75,29 +75,29 @@
+@@ -75,29 +75,29 @@ AC_LANG_POP([C])
  CFLAGS=$oCFLAGS
  
  # Find xpidl
